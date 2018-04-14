@@ -41,6 +41,12 @@ sudo apt-get install sublime-text
 sudo apt-get install r-base
 sudo apt-get install r-base-dev
 
+#Install and configure git
+sudo apt-get install git
+git config --global user.email colemai@tcd.ie
+git config --global user.name Ian
+
+
 #Set keyboard layout to US standard
 setxkbmap us
 
