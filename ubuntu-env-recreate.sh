@@ -14,6 +14,9 @@ echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sud
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo add-apt-repository ppa:marutter/rrutter
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian `lsb_release -cs` contrib"
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
 sudo apt-get update
 
@@ -54,6 +57,8 @@ sudo apt-get install git
 git config --global user.email $email 
 git config --global user.name Ian
 
+#Install Virtualbox
+sudo apt-get install virtualbox-5.2
 
 #Set keyboard layout to US standard
 setxkbmap us
@@ -63,4 +68,5 @@ ssh-keygen -t rsa -C $email
 
 #System preferences
 gsettings set com.canonical.indicator.power show-percentage true
+
 
