@@ -60,6 +60,9 @@ git config --global user.name Ian
 #Install Virtualbox
 sudo apt-get install virtualbox-5.2
 
+#Install htop
+sudo apt install htop
+
 #Set keyboard layout to US standard
 setxkbmap us
 
