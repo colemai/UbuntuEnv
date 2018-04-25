@@ -43,7 +43,7 @@ echo -----Configuring git and system as specified-----
 
 #Install and configure git
 git config --global user.email $email 
-git config --global user.name Ian
+git config --global user.name colemai
 
 sudo systemctl disable bluetooth.service \
 
@@ -51,7 +51,7 @@ sudo systemctl disable bluetooth.service \
 setxkbmap us
 
 #Create ssh keys
-#ssh-keygen -t rsa -C $email
+#ssh-keygen -t rsa -C $email				
 
 #System preferences
 gsettings set com.canonical.indicator.power show-percentage true
