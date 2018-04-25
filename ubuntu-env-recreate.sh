@@ -44,6 +44,7 @@ echo -----Configuring git and system as specified-----
 #Install and configure git
 git config --global user.email $email 
 git config --global user.name colemai
+git config --global push.default simple
 
 sudo systemctl disable bluetooth.service \
 
