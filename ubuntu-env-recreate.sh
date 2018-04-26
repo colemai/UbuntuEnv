@@ -34,7 +34,8 @@ r-base \
 r-base-dev \
 git \
 virtualbox-5.2 \
-htop 
+htop\
+mysql-client-core-5.7 
 
 
 sudo apt-get update
