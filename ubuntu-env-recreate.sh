@@ -34,8 +34,8 @@ r-base \
 r-base-dev \
 git \
 virtualbox-5.2 \
-htop \
-/
+htop 
+
 
 sudo apt-get update
 
