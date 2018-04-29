@@ -40,6 +40,10 @@ python-pip
 
 sudo apt-get update
 
+echo -----Copy over the .profile file-----
+cat profile.txt > ~/.profile
+
+
 echo -----Configuring git and system as specified-----
 
 #Install and configure git
