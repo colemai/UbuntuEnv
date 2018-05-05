@@ -40,9 +40,9 @@ python-pip
 
 sudo apt-get update
 
-echo -----Copy over the .profile file-----
+echo -----Copy over the .profile file and config files-----
 cat profile.txt > ~/.profile
-
+cat configs/terminator > ~/.config/terminator/config
 
 echo -----Configuring git and system as specified-----
 
