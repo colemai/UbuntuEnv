@@ -1,9 +1,22 @@
 #This script should mostly set up my current Ubuntu 16.04 desktop environment
+#Run with:
+#sudo bash ubuntu-env-recreate.sh
 echo What email address to use for git and ssh key?
 read email
 
+
 echo -----First Update-----
 sudo apt-get update 
+
+echo -----Detecting Distro-----
+opsys=`uname -r`
+if [[ "$opsys" = *"kali"* ]]; then
+	opsys="kali"
+else
+	opsys="ubuntu"
+fi
+
+echo Distro seems to be $opsys
 
 
 echo -----Going to get required repositories-----
@@ -22,27 +35,45 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD
 
 
 echo -----Going to install specified software-----
+echo $opsys
+if [ $opsys == "ubuntu" ]; then
+	echo installing apt packages for Ubuntu setup
+	sudo apt-get install terminator  \
+	brightness-controller-simple \
+	xclip \
+	vim \
+	compizconfig-settings-manager \
+	google-chrome-stable \
+	sublime-text \
+	r-base \
+	r-base-dev \
+	git \
+	virtualbox-5.2 \
+	htop\
+	mysql-client-core-5.7 \
+	python-pip
+elif [ $opsys == "kali" ]; then
+	echo installing apt packages for Kali setup
+	apt-get install terminator \
+		vim \
+		xclip \
+		google-chrome-stable \
+		sublime-text \
+		git \
+		htop
+else 
+	echo unknown distro
 
-sudo apt-get install terminator  \
-brightness-controller-simple \
-xclip \
-vim \
-compizconfig-settings-manager \
-google-chrome-stable \
-sublime-text \
-r-base \
-r-base-dev \
-git \
-virtualbox-5.2 \
-htop\
-mysql-client-core-5.7 \
-python-pip
+fi
 
 sudo apt-get update
 
+
 echo -----Copy over the .profile file and config files-----
-cat profile.txt > ~/.profile
-cat configs/terminator > ~/.config/terminator/config
+#Uncomment the below line for the first time you run this on a system
+#cat aliases.txt >> ~/.bashrc
+#TODO for each of the below config files, replace original file and source the file
+cat configs/terminator/config > ~/.config/terminator/config
 
 echo -----Configuring git and system as specified-----
 
@@ -57,6 +88,7 @@ sudo systemctl disable bluetooth.service \
 setxkbmap us
 
 #Create ssh keys
+#Uncomment the below line for the first time you run this on a system
 #ssh-keygen -t rsa -C $email				
 
 #System preferences
