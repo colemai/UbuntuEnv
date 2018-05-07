@@ -49,7 +49,7 @@ if [ $opsys == "ubuntu" ]; then
 	r-base-dev \
 	git \
 	virtualbox-5.2 \
-	htop\
+	htop \
 	mysql-client-core-5.7 \
 	python-pip
 elif [ $opsys == "kali" ]; then
@@ -73,6 +73,7 @@ echo -----Copy over the .profile file and config files-----
 #Uncomment the below line for the first time you run this on a system
 #cat aliases.txt >> ~/.bashrc
 #TODO for each of the below config files, replace original file and source the file
+mkdir ~/.config/terminator
 cat configs/terminator/config > ~/.config/terminator/config
 
 echo -----Configuring git and system as specified-----
