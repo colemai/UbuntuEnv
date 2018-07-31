@@ -51,7 +51,8 @@ if [ $opsys == "ubuntu" ]; then
 	virtualbox-5.2 \
 	htop \
 	mysql-client-core-5.7 \
-	python-pip
+	python-pip \
+	python3-pip
 elif [ $opsys == "kali" ]; then
 	echo installing apt packages for Kali setup
 	apt-get install terminator \
